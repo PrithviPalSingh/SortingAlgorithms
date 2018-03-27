@@ -6,31 +6,42 @@ using System.Threading.Tasks;
 
 namespace Sorting
 {
-    /// <summary>
-    /// N^2/2 - elements are traveres while sorting
-    /// </summary>
-    class SelectionSort
+    class H_Sorting
     {
         public void Sort(int[] items)
         {
             int N = items.Length;
             int loop = 0;
             int comparison = 0;
-            for (int i = 0; i < N - 1; i++)
+
+            int h = 1;
+
+            while (h < N / 3)
             {
-                int min = i;
-                for (int j = i + 1; j < N; j++)
-                {                    
-                    loop++;
-                    if (Compare(items[min], items[j]))
+                h = 3 * h + 1;
+            }
+
+            while (h >= 1)
+            {
+                for (int i = h; i < N; i++)
+                {
+                    for (int j = i; j >= h; j -= h)
                     {
-                        comparison++;
-                        min = j;                        
+                        loop++;
+                        if (Compare(items[j - h], items[j]))
+                        {
+                            comparison++;
+                            Exchange(items, j - h, j);
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
                 }
 
-                Exchange(items, i, min);
-            }
+                h = h / 3;
+            }           
 
             print(items);
             Console.WriteLine();

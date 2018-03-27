@@ -20,14 +20,15 @@ namespace Sorting
             ins.Sort(items);
 
             //2. Insertion sort using IComparable
+            //InsertionSort ins = new InsertionSort();
             //int[] a = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
             //IComparable[] items = new IComparable[a.Length];
             //for (int i = 0; i < a.Length; i++)
             //{
             //    items[i] = a[i];
             //}
-            //InsertionSortUsingIComparable(items);
-            //PrintArray(items);
+            //ins.InsertionSortUsingIComparable(items);
+
 
             //3. Insertion Sort hacker rank
             //int n = Convert.ToInt32(Console.ReadLine());
@@ -45,6 +46,11 @@ namespace Sorting
             SelectionSort ss = new SelectionSort();
             int[] items1 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
             ss.Sort(items1);
+
+            //6. H-Sorting
+            H_Sorting hs = new H_Sorting();
+            int[] items2 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
+            hs.Sort(items2);
 
             Console.Read();
         }       

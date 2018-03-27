@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Sorting
 {
+    /// <summary>
+    /// N^2/4 - elements are traveres while sorting
+    /// It's suited for partially sorted arrays
+    /// </summary>
     class InsertionSort
     {
         public void Sort(int[] items)
@@ -14,17 +18,19 @@ namespace Sorting
             int loop = 0;
             int comparison = 0;
 
-            for (int i = 0; i < N - 1; i++)
+            for (int i = 1; i < N; i++)
             {
-                for (int j = i + 1; j > 0; j--)
+                for (int j = i; j > 0; j--)
                 {
                     loop++;
-                    var swap = items[j - 1];
                     if (Compare(items[j - 1], items[j]))
                     {
                         comparison++;
-                        items[j - 1] = items[j];
-                        items[j] = swap;
+                        Exchange(items, j - 1, j);
+                    }
+                    else
+                    {
+                        break;
                     }
                 }
             }
@@ -35,24 +41,38 @@ namespace Sorting
             Console.WriteLine("comparison" + comparison);
         }
 
-        void InsertionSortUsingIComparable(IComparable[] items)
+        public void InsertionSortUsingIComparable(IComparable[] items)
         {
-            int length = items.Length;
-            for (int i = 0; i < length; i++)
+            int N = items.Length;
+            int loop = 0;
+            int comparison = 0;
+
+            for (int i = 0; i < N - 1; i++)
             {
-                for (int j = i; j > 0; j--)
+                for (int j = i + 1; j > 0; j--)
                 {
-                    var swap = items[j - 1];
-                    if (items[j - 1].CompareTo(items[j]) > 0)
+                    loop++;
+
+                    if (Compare(Convert.ToInt32(items[j - 1]), Convert.ToInt32(items[j])))
                     {
-                        items[j - 1] = items[j];
-                        items[j] = swap;
+                        comparison++;
+                        Exchange(items, j - 1, j);
                     }
+                    else
+                    {
+                        break;
+                    }
+
                 }
             }
+
+            print(items);
+            Console.WriteLine();
+            Console.WriteLine("loop" + loop);
+            Console.WriteLine("comparison" + comparison);
         }
-        
-        void insertionSort1(int n, int[] arr)
+
+        public void insertionSort1(int n, int[] arr)
         {
             var lastItem = arr[n - 1];
             int i;
@@ -78,7 +98,7 @@ namespace Sorting
             }
         }
 
-        void insertionSort2(int n, int[] arr)
+        public void insertionSort2(int n, int[] arr)
         {
             for (int i = 0; i < n - 1; i++)
             {
@@ -107,12 +127,30 @@ namespace Sorting
             }
         }
 
+        private void print(IComparable[] items)
+        {
+            int N = items.Length;
+
+            for (int i = 0; i < N; i++)
+            {
+                Console.Write(items[i] + " ");
+            }
+        }
+
+
         private bool Compare(int a, int b)
         {
             return a > b;
         }
 
         private void Exchange(int[] arr, int minIndex, int indextoSwap)
+        {
+            var swap = arr[minIndex];
+            arr[minIndex] = arr[indextoSwap];
+            arr[indextoSwap] = swap;
+        }
+
+        private void Exchange(IComparable[] arr, int minIndex, int indextoSwap)
         {
             var swap = arr[minIndex];
             arr[minIndex] = arr[indextoSwap];

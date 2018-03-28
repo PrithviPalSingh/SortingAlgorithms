@@ -14,10 +14,10 @@ namespace Sorting
              * Area to call sorting algorithms
              * */
 
-            //1.Insertion sort
-            InsertionSort ins = new InsertionSort();
-            int[] items = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
-            ins.Sort(items);
+            ////1.Insertion sort
+            //InsertionSort ins = new InsertionSort();
+            //int[] items = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
+            //ins.Sort(items);
 
             //2. Insertion sort using IComparable
             //InsertionSort ins = new InsertionSort();
@@ -42,15 +42,20 @@ namespace Sorting
             //int[] arr = Array.ConvertAll(arr_temp, Int32.Parse);
             //insertionSort2(n, arr);
 
-            //5. Selection sort
-            SelectionSort ss = new SelectionSort();
-            int[] items1 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
-            ss.Sort(items1);
+            ////5. Selection sort
+            //SelectionSort ss = new SelectionSort();
+            //int[] items1 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
+            //ss.Sort(items1);
 
-            //6. H-Sorting
-            H_Sorting hs = new H_Sorting();
-            int[] items2 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
-            hs.Sort(items2);
+            ////6. H-Sorting
+            //H_Sorting hs = new H_Sorting();
+            //int[] items2 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
+            //hs.Sort(items2);
+
+            //7. Shuffle
+            Shuffling sf = new Shuffling();
+            int[] items3 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
+            sf.shuffle(items3);
 
             Console.Read();
         }       

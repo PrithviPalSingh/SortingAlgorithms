@@ -58,9 +58,14 @@ namespace Sorting
             //sf.shuffle(items3);
 
             //8. Classic Merge Sort
-            MergeSort ms = new MergeSort();
-            int[] items4 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
-            ms.Sort(items4);
+            //MergeSort ms = new MergeSort();
+            //int[] items4 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
+            //ms.Sort(items4);
+
+            //9.Bottom up merge sort
+            MergeSort bums = new MergeSort();
+            int[] items5 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
+            bums.BottomUpMergeSort(items5);
 
             Console.Read();
         }       

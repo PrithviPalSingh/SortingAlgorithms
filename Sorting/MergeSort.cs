@@ -15,6 +15,21 @@ namespace Sorting
             print(arr);
         }
 
+        public void BottomUpMergeSort(int[] arr)
+        {
+            int N = arr.Length;
+            int[] auxArray = new int[N];
+            for (int sz = 1; sz < N; sz = sz + sz)
+            {
+                for (int lo = 0; lo < N - sz; lo += sz + sz)
+                {
+                    Merge(arr, auxArray, lo, lo + sz - 1, Math.Min(lo + sz + sz - 1, N - 1));
+                }
+            }
+
+            print(arr);
+        }
+
         private void print(int[] items)
         {
             int N = items.Length;

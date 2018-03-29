@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Sorting
 {
+    /// <summary>
+    /// Shell sorting
+    /// </summary>
     class H_Sorting
     {
         public void Sort(int[] items)
@@ -28,10 +31,10 @@ namespace Sorting
                     for (int j = i; j >= h; j -= h)
                     {
                         loop++;
-                        if (Compare(items[j - h], items[j]))
+                        if (Utilities.Greater(items[j - h], items[j]))
                         {
                             comparison++;
-                            Exchange(items, j - h, j);
+                            Utilities.Exchange(items, j - h, j);
                         }
                         else
                         {
@@ -41,34 +44,12 @@ namespace Sorting
                 }
 
                 h = h / 3;
-            }           
+            }
 
-            print(items);
+            Utilities.Print(items);
             Console.WriteLine();
             Console.WriteLine("loop" + loop);
             Console.WriteLine("comparison" + comparison);
-        }
-
-        private void print(int[] items)
-        {
-            int N = items.Length;
-
-            for (int i = 0; i < N; i++)
-            {
-                Console.Write(items[i] + " ");
-            }
-        }
-
-        private bool Compare(int a, int b)
-        {
-            return a > b;
-        }
-
-        private void Exchange(int[] arr, int minIndex, int indextoSwap)
-        {
-            var swap = arr[minIndex];
-            arr[minIndex] = arr[indextoSwap];
-            arr[indextoSwap] = swap;
-        }
+        }       
     }
 }

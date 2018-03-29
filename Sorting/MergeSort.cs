@@ -12,7 +12,7 @@ namespace Sorting
         {
             int[] auxArray = new int[arr.Length];
             Sort(arr, auxArray, 0, arr.Length - 1);
-            print(arr);
+            Utilities.Print(arr);
         }
 
         public void BottomUpMergeSort(int[] arr)
@@ -27,18 +27,10 @@ namespace Sorting
                 }
             }
 
-            print(arr);
+            Utilities.Print(arr);
         }
 
-        private void print(int[] items)
-        {
-            int N = items.Length;
-
-            for (int i = 0; i < N; i++)
-            {
-                Console.Write(items[i] + " ");
-            }
-        }
+      
 
         private void Sort(int[] arr, int[] auxArray, int low, int high)
         {
@@ -73,7 +65,7 @@ namespace Sorting
                 {
                     arr[k] = auxArray[i++];
                 }
-                else if (Compare(auxArray[j], auxArray[i]))
+                else if (Utilities.Greater(auxArray[j], auxArray[i]))
                 {
                     arr[k] = auxArray[i++];
                 }
@@ -82,11 +74,6 @@ namespace Sorting
                     arr[k] = auxArray[j++];
                 }
             }
-        }
-
-        private bool Compare(int a, int b)
-        {
-            return a > b;
         }
     }
 }

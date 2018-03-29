@@ -19,7 +19,7 @@ namespace Sorting
             //int[] items = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
             //ins.Sort(items);
 
-            //2. Insertion sort using IComparable
+            ////2. Insertion sort using IComparable
             //InsertionSort ins = new InsertionSort();
             //int[] a = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
             //IComparable[] items = new IComparable[a.Length];
@@ -30,17 +30,19 @@ namespace Sorting
             //ins.InsertionSortUsingIComparable(items);
 
 
-            //3. Insertion Sort hacker rank
-            //int n = Convert.ToInt32(Console.ReadLine());
-            //string[] arr_temp = Console.ReadLine().Split(' ');
-            //int[] arr = Array.ConvertAll(arr_temp, Int32.Parse);            
-            //insertionSort1(n, arr);
-
-            //4. Insertion sort hacker rank
+            ////3. Insertion Sort hacker rank
+            //InsertionSort ins = new InsertionSort();
             //int n = Convert.ToInt32(Console.ReadLine());
             //string[] arr_temp = Console.ReadLine().Split(' ');
             //int[] arr = Array.ConvertAll(arr_temp, Int32.Parse);
-            //insertionSort2(n, arr);
+            //ins.insertionSort1(n, arr);
+
+            ////4. Insertion sort hacker rank
+            //InsertionSort ins = new InsertionSort();
+            //int n = Convert.ToInt32(Console.ReadLine());
+            //string[] arr_temp = Console.ReadLine().Split(' ');
+            //int[] arr = Array.ConvertAll(arr_temp, Int32.Parse);
+            //ins.insertionSort2(n, arr);
 
             ////5. Selection sort
             //SelectionSort ss = new SelectionSort();
@@ -62,10 +64,26 @@ namespace Sorting
             //int[] items4 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
             //ms.Sort(items4);
 
-            //9.Bottom up merge sort
-            MergeSort bums = new MergeSort();
-            int[] items5 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
-            bums.BottomUpMergeSort(items5);
+            ////9.Bottom up merge sort
+            //MergeSort bums = new MergeSort();
+            //int[] items5 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
+            //bums.BottomUpMergeSort(items5);
+
+            //10. Quick Sort
+            //QuickSort qs = new QuickSort();
+            //int[] items6 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
+            //qs.Sort(items6);
+            //Console.WriteLine(qs.Select(items6, 9));
+
+            ////11. Quick sort select
+            //QuickSort qs = new QuickSort();
+            //int[] items7 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));           
+            //Console.WriteLine(qs.Select(items7, 1));
+
+            //12. Dijkstra's 3-Way sort
+            Dijkstra3WaySorting d3s = new Dijkstra3WaySorting();
+            int[] items8 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
+            d3s.Sort(items8);
 
             Console.Read();
         }       

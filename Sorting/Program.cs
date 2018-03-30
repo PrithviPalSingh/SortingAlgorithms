@@ -86,15 +86,24 @@ namespace Sorting
             //d3s.Sort(items8);
 
             ////14. Big sorting
-            BigSorting bs = new BigSorting();
+            //BigSorting bs = new BigSorting();
+            //int n = Convert.ToInt32(Console.ReadLine());
+            //string[] arr = new string[n];
+            //for (int arr_i = 0; arr_i < n; arr_i++)
+            //{
+            //    arr[arr_i] = Console.ReadLine();
+            //}
+            //string[] result = bs.Sort(arr);
+            //Console.WriteLine(String.Join("\n", result));
+
+            //15. Hackerrank intro challenge
+            int V = Convert.ToInt32(Console.ReadLine());
             int n = Convert.ToInt32(Console.ReadLine());
-            string[] arr = new string[n];
-            for (int arr_i = 0; arr_i < n; arr_i++)
-            {
-                arr[arr_i] = Console.ReadLine();
-            }
-            string[] result = bs.Sort(arr);
-            Console.WriteLine(String.Join("\n", result));
+            string[] arr_temp = Console.ReadLine().Split(' ');
+            int[] arr = Array.ConvertAll(arr_temp, Int32.Parse);
+            HackerRankIntroChallenge hrc = new HackerRankIntroChallenge();
+            int result = hrc.introTutorial(V, arr);
+            Console.WriteLine(result);
 
             Console.Read();
         }       

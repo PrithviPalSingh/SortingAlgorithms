@@ -81,9 +81,20 @@ namespace Sorting
             //Console.WriteLine(qs.Select(items7, 1));
 
             //12. Dijkstra's 3-Way sort
-            Dijkstra3WaySorting d3s = new Dijkstra3WaySorting();
-            int[] items8 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
-            d3s.Sort(items8);
+            //Dijkstra3WaySorting d3s = new Dijkstra3WaySorting();
+            //int[] items8 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
+            //d3s.Sort(items8);
+
+            ////14. Big sorting
+            BigSorting bs = new BigSorting();
+            int n = Convert.ToInt32(Console.ReadLine());
+            string[] arr = new string[n];
+            for (int arr_i = 0; arr_i < n; arr_i++)
+            {
+                arr[arr_i] = Console.ReadLine();
+            }
+            string[] result = bs.Sort(arr);
+            Console.WriteLine(String.Join("\n", result));
 
             Console.Read();
         }       

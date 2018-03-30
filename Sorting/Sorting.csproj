@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BigSorting.cs" />
     <Compile Include="ConvexHull.cs" />
     <Compile Include="Dijkstra3WaySorting.cs" />
     <Compile Include="H-Sorting.cs" />

@@ -14,6 +14,7 @@ namespace Sorting
             arr[minIndex] = arr[indextoSwap];
             arr[indextoSwap] = swap;
         }
+
         public static bool Greater(int a, int b)
         {
             return a > b;
@@ -29,6 +30,23 @@ namespace Sorting
             }
 
             Console.WriteLine();
+        }
+
+        public static void Exchange(string[] arr, int minIndex, int indextoSwap)
+        {
+            var swap = arr[minIndex];
+            arr[minIndex] = arr[indextoSwap];
+            arr[indextoSwap] = swap;
+        }
+
+        public static void Print(string[] items)
+        {
+            int N = items.Length;
+
+            for (int i = 0; i < N; i++)
+            {
+                Console.WriteLine(items[i]);
+            }
         }
     }
 }

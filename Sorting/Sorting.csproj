@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="BigSorting.cs" />
     <Compile Include="ConvexHull.cs" />
+    <Compile Include="CountingSort.cs" />
     <Compile Include="Dijkstra3WaySorting.cs" />
     <Compile Include="H-Sorting.cs" />
     <Compile Include="HackerRankIntroChallenge.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickSort.cs" />
+    <Compile Include="Quicksort1.cs" />
     <Compile Include="SelectionSort.cs" />
     <Compile Include="Shuffling.cs" />
     <Compile Include="Utilities.cs" />

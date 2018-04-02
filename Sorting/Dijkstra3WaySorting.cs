@@ -31,8 +31,7 @@ namespace Sorting
             {
                 if (arr[i] > arr[lt])
                 {
-                    Utilities.Exchange(arr, i, gt--);
-                    gt--;
+                    Utilities.Exchange(arr, i, gt--);                    
                 }
                 else if (arr[i] < arr[lt])
                 {

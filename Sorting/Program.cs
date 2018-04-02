@@ -97,13 +97,29 @@ namespace Sorting
             //Console.WriteLine(String.Join("\n", result));
 
             //15. Hackerrank intro challenge
-            int V = Convert.ToInt32(Console.ReadLine());
+            //int V = Convert.ToInt32(Console.ReadLine());
+            //int n = Convert.ToInt32(Console.ReadLine());
+            //string[] arr_temp = Console.ReadLine().Split(' ');
+            //int[] arr = Array.ConvertAll(arr_temp, Int32.Parse);
+            //HackerRankIntroChallenge hrc = new HackerRankIntroChallenge();
+            //int result = hrc.introTutorial(V, arr);
+            //Console.WriteLine(result);
+
+            ////16. Quick sort hacker rank
+            //int n = Convert.ToInt32(Console.ReadLine());
+            //string[] arr_temp = Console.ReadLine().Split(' ');
+            //int[] arr = Array.ConvertAll(arr_temp, Int32.Parse);
+            //Quicksort1 qs1 = new Quicksort1();
+            //int[] result = qs1.quickSort(arr);
+            //Console.WriteLine(String.Join(" ", result));
+
+            ////17. Counting sort
             int n = Convert.ToInt32(Console.ReadLine());
             string[] arr_temp = Console.ReadLine().Split(' ');
             int[] arr = Array.ConvertAll(arr_temp, Int32.Parse);
-            HackerRankIntroChallenge hrc = new HackerRankIntroChallenge();
-            int result = hrc.introTutorial(V, arr);
-            Console.WriteLine(result);
+            CountingSort cs = new CountingSort();
+            int[] result = cs.countingSort(arr);
+            Console.WriteLine(String.Join(" ", result));
 
             Console.Read();
         }       

@@ -65,13 +65,13 @@ namespace Sorting
                 {
                     arr[k] = auxArray[i++];
                 }
-                else if (Utilities.Greater(auxArray[j], auxArray[i]))
+                else if (Utilities.Less(auxArray[j], auxArray[i]))
                 {
-                    arr[k] = auxArray[i++];
+                    arr[k] = auxArray[j++];
                 }
                 else
                 {
-                    arr[k] = auxArray[j++];
+                    arr[k] = auxArray[i++];
                 }
             }
         }

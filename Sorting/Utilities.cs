@@ -39,14 +39,21 @@ namespace Sorting
             arr[indextoSwap] = swap;
         }
 
+        public static bool Less(int a, int b)
+        {
+            return a.CompareTo(b) < 0;
+        }
+
         public static void Print(string[] items)
         {
             int N = items.Length;
 
             for (int i = 0; i < N; i++)
             {
-                Console.WriteLine(items[i]);
+                Console.Write(items[i] + " ");
             }
+
+            Console.WriteLine();
         }
     }
 }

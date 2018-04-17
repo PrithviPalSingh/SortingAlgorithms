@@ -10,30 +10,50 @@ namespace Sorting
     {
         public int[] countingSort(int[] arr)
         {
-            int[] arrTemp = new int[100];
-            int[] arrNew = new int[arr.Length];
-            for (int i = 0; i < arr.Length; i++)
+            int n = arr.Length;
+            int[] count = new int[n];
+            int[] finalArray = new int[n];
+            //int[] arrNew = new int[arr.Length];
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    arrTemp[arr[i]]++;
+            //}
+
+            //int k = 0;
+
+            //for (int i = 0; i < arrTemp.Length; i++)
+            //{
+            //    if (arrTemp[i] == 0)
+            //        continue;
+
+            //    int j = i;
+            //    while (arrTemp[j] > 0)
+            //    {
+            //        arrNew[k] = j;
+            //        arrTemp[j]--;
+            //        k++;
+            //    }
+            //}
+
+            //return arrNew;
+
+            for (int i = 0; i < n; i++)
             {
-                arrTemp[arr[i]]++;
+                ++count[arr[i]];
             }
 
-            int k = 0;
-
-            for (int i = 0; i < arrTemp.Length; i++)
+            for (int i = 1; i < n; i++)
             {
-                if (arrTemp[i] == 0)
-                    continue;
-
-                int j = i;
-                while (arrTemp[j] > 0)
-                {
-                    arrNew[k] = j;
-                    arrTemp[j]--;
-                    k++;
-                }
+                count[i] += count[i - 1];
             }
 
-            return arrNew;
+            for (int i = 0; i < n; i++)
+            {
+                finalArray[count[arr[i]] - 1] = arr[i];
+                --count[arr[i]];
+            }
+
+            return finalArray;
         }
     }
 }

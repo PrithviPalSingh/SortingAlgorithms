@@ -124,24 +124,24 @@ namespace Sorting
             //    "67", "99", "12", "83", "89", "80", "91", "39", "86", "76", "85", "74", "39", "25", "90", "59", "10", "94", "32", "44", "3", "89",
             //    "30", "27", "79", "46", "96", "27", "32", "18", "21", "92", "69", "81", "40", "40", "34", "68", "78", "24", "87", "42", "69", "23",
             //    "41", "78", "22", "6", "90", "99", "89", "50","30", "20", "1", "43", "3", "70", "95", "33", "46", "44", "9", "69", "48", "33", "60",
-            //    "65", "16", "82", "67", "61", "32", "21", "79", "75", "75", "13", "87", "70", "33" } ;// Console.ReadLine().Split(' ');
+            //    "65", "16", "82", "67", "61", "32", "21", "79", "75", "75", "13", "87", "70", "33" };// Console.ReadLine().Split(' ');
             //int[] arr = Array.ConvertAll(arr_temp, Int32.Parse);
             //CountingSort cs = new CountingSort();
             //int[] result = cs.countingSort(arr);
             //Console.WriteLine(String.Join(" ", result));
 
             ////18. Full counting sort
-            //int n = Convert.ToInt32(Console.ReadLine());
-            //int[] arr1 = { 0, 6, 0, 6, 4, 0, 6, 0, 6, 0, 4, 3, 0, 1, 5, 1, 2, 4, 2, 4 };
-            //string[] arr2 = { "ab", "cd", "ef", "gh", "ij", "ab", "cd", "ef", "gh", "ij", "that", "be", "to", "be", "question", "or", "not", "is", "to", "the" };
-            //FullCountingSort fcs = new FullCountingSort();
-            //fcs.Sort(n, arr1, arr2);
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[] arr1 = { 0, 6, 0, 6, 4, 0, 6, 0, 6, 0, 4, 3, 0, 1, 5, 1, 2, 4, 2, 4 };
+            string[] arr2 = { "ab", "cd", "ef", "gh", "ij", "ab", "cd", "ef", "gh", "ij", "that", "be", "to", "be", "question", "or", "not", "is", "to", "the" };
+            FullCountingSort fcs = new FullCountingSort();
+            fcs.Sort(n, arr1, arr2);
 
             ////19. Heap Sort
             //char[] charArray = { 'H', 'E', 'A', 'P', 'S', 'O', 'R', 'T', 'E', 'X', 'A', 'M', 'P', 'L', 'E' };
-            int[] arr1 = { 2, 3, 4, 5, 6, 7, 8, 9, 1 };
-            HeapSort hs = new HeapSort();
-            hs.Sort(arr1);
+            //int[] arr1 = { 2, 3, 4, 5, 6, 7, 8, 9, 1 };
+            //HeapSort hs = new HeapSort();
+            //hs.Sort(arr1);
             Console.Read();
         }
 

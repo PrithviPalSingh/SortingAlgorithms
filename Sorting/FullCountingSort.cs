@@ -13,59 +13,60 @@ namespace Sorting
     {
         public void Sort(int n, int[] arr1, string[] arr2)
         {
-            ////int[] arrAux = new int[n];
-            ////string[] arr2Aux = new string[n];
-            for (int i = 0; i <= (n - 1) / 2; i++)
+            int[] count = new int[n];
+            int[] finalArray = new int[n];
+            string[] finalStringArray = new string[n];
+
+            for (int i = 0; i < n/2; i++)
             {
                 arr2[i] = "-";
             }
 
-            //////Sort(arr1, arrAux, arr2, arr2Aux, 0, n - 1);
-
-            //////Console.WriteLine(string.Join(" ", arr2));
-
-            ////for (int sz = 1; sz < n; sz = sz + sz)
-            ////{
-            ////    for (int lo = 0; lo < n - sz; lo += sz + sz)
-            ////    {
-            ////        var low = lo;
-            ////        var mid = lo + sz - 1;
-            ////        var high = Math.Min(lo + sz + sz - 1, n - 1);
-            ////        Merge(arr1, arrAux, arr2, arr2Aux, low, mid, high);
-            ////    }
-            ////}
-
-            int[] arrTemp = new int[100];
-            int[] arrNew = new int[n];
-            string[] arrNewStr = new string[n];
-            for (int i = 0; i < arr1.Length; i++)
+            for (int i = 0; i < n; i++)
             {
-                arrTemp[arr1[i]]++;
+                ++count[arr1[i]];
             }
 
-            int k = 0;
-
-            for (int i = 0; i < arrTemp.Length; i++)
+            for (int i = 1; i < n; i++)
             {
-                if (arrTemp[i] == 0)
-                    continue;
-
-                int j = i;
-                while (arrTemp[j] > 0)
-                {
-                    arrNew[k] = j;
-                    arrNewStr[k] = arr2[arrTemp[j]];
-                    arrTemp[j]--;
-                    k++;
-                }
+                count[i] += count[i - 1];
             }
 
-            Console.WriteLine(string.Join(" ", arr2));
-            Console.WriteLine(string.Join(" ", arrNew));
-            Console.WriteLine(string.Join(" ", arrNewStr));
+            for (int i = 0; i < n; i++)
+            {
+                finalArray[count[arr1[i]] - 1] = arr1[i];
+                finalStringArray[count[arr1[i]] - 1] = arr2[i];
+                --count[arr1[i]];
+            }
+
+            int[] count1 = new int[n];
+            int[] finalArray1 = new int[n];
+            string[] finalStringArray1 = new string[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                ++count1[finalArray[i]];
+            }
+
+            for (int i = 1; i < n; i++)
+            {
+                count1[i] += count1[i - 1];
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                finalArray1[count1[finalArray[i]] - 1] = finalArray[i];
+                finalStringArray1[count1[finalArray[i]] - 1] = finalStringArray[i];
+                --count1[finalArray[i]];
+            }
+
+            //Console.WriteLine(string.Join(" ", finalArray));
+            //Console.WriteLine(string.Join(" ", finalStringArray));
+            //Console.WriteLine(string.Join(" ", finalArray1));
+            Console.WriteLine(string.Join(" ", finalStringArray1));
         }
 
-        private void Sort(int[] arr, int[] auxArray, string[] arr2, string[] arr2Aux, int low, int high)
+        private void Sort(int[] arr, int[] auxArray, int[] arrInt, int[] arr2Aux, int low, int high)
         {
             if (high <= low)
             {
@@ -73,18 +74,18 @@ namespace Sorting
             }
 
             int mid = low + (high - low) / 2;
-            Sort(arr, auxArray, arr2, arr2Aux, low, mid);
-            Sort(arr, auxArray, arr2, arr2Aux, mid + 1, high);
-            Merge(arr, auxArray, arr2, arr2Aux, low, mid, high);
+            Sort(arr, auxArray, arrInt, arr2Aux, low, mid);
+            Sort(arr, auxArray, arrInt, arr2Aux, mid + 1, high);
+            Merge(arr, auxArray, arrInt, arr2Aux, low, mid, high);
         }
 
-        private void Merge(int[] arr, int[] auxArray, string[] arr2, string[] arr2Aux, int low, int mid, int high)
+        private void Merge(int[] arr, int[] auxArray, int[] arrInt, int[] arr2Aux, int low, int mid, int high)
         {
             int N = arr.Length;
             for (int k = 0; k < N; k++)
             {
                 auxArray[k] = arr[k];
-                arr2Aux[k] = arr2[k];
+                arr2Aux[k] = arrInt[k];
             }
 
             int i = low;
@@ -94,25 +95,25 @@ namespace Sorting
                 if (i > mid)
                 {
                     arr[k] = auxArray[j];
-                    arr2[k] = arr2Aux[j];
+                    arrInt[k] = arr2Aux[j];
                     j++;
                 }
                 else if (j > high)
                 {
                     arr[k] = auxArray[i];
-                    arr2[k] = arr2Aux[i];
+                    arrInt[k] = arr2Aux[i];
                     i++;
                 }
                 else if (Less(auxArray[j], auxArray[i]))
                 {
                     arr[k] = auxArray[j];
-                    arr2[k] = arr2Aux[j];
+                    arrInt[k] = arr2Aux[j];
                     j++;
                 }
                 else
                 {
                     arr[k] = auxArray[i];
-                    arr2[k] = arr2Aux[i];
+                    arrInt[k] = arr2Aux[i];
                     i++;
                 }
             }

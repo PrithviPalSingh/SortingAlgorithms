@@ -8,6 +8,7 @@ namespace Sorting
 {
     /// <summary>
     /// N^2/2 - elements are traveres while sorting
+    /// Quadratic time even if array is sorted
     /// </summary>
     class SelectionSort
     {
@@ -16,16 +17,16 @@ namespace Sorting
             int N = items.Length;
             int loop = 0;
             int comparison = 0;
-            for (int i = 0; i < N - 1; i++)
+            for (int i = 0; i < N; i++)
             {
                 int min = i;
                 for (int j = i + 1; j < N; j++)
-                {                    
+                {
                     loop++;
-                    if (Utilities.Greater(items[min], items[j]))
+                    if (Utilities.Less(items[j], items[min]))
                     {
                         comparison++;
-                        min = j;                        
+                        min = j;
                     }
                 }
 

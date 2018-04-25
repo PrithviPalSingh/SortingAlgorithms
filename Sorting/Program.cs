@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,7 +58,7 @@ namespace Sorting
             //7. Shuffle
             //Shuffling sf = new Shuffling();
             //int[] items3 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
-            //sf.shuffle(items3);
+            //Shuffling.Shuffle(items3);
 
             //8. Classic Merge Sort
             //MergeSort ms = new MergeSort();
@@ -131,17 +132,41 @@ namespace Sorting
             //Console.WriteLine(String.Join(" ", result));
 
             ////18. Full counting sort
-            int n = Convert.ToInt32(Console.ReadLine());
-            int[] arr1 = { 0, 6, 0, 6, 4, 0, 6, 0, 6, 0, 4, 3, 0, 1, 5, 1, 2, 4, 2, 4 };
-            string[] arr2 = { "ab", "cd", "ef", "gh", "ij", "ab", "cd", "ef", "gh", "ij", "that", "be", "to", "be", "question", "or", "not", "is", "to", "the" };
-            FullCountingSort fcs = new FullCountingSort();
-            fcs.Sort(n, arr1, arr2);
+            //int n = Convert.ToInt32(Console.ReadLine());
+            //int[] arr1 = { 0, 6, 0, 6, 4, 0, 6, 0, 6, 0, 4, 3, 0, 1, 5, 1, 2, 4, 2, 4 };
+            //string[] arr2 = { "ab", "cd", "ef", "gh", "ij", "ab", "cd", "ef", "gh", "ij", "that", "be", "to", "be", "question", "or", "not", "is", "to", "the" };
+            //FullCountingSort fcs = new FullCountingSort();
+            //fcs.Sort(n, arr1, arr2);
 
             ////19. Heap Sort
             //char[] charArray = { 'H', 'E', 'A', 'P', 'S', 'O', 'R', 'T', 'E', 'X', 'A', 'M', 'P', 'L', 'E' };
             //int[] arr1 = { 2, 3, 4, 5, 6, 7, 8, 9, 1 };
             //HeapSort hs = new HeapSort();
             //hs.Sort(arr1);
+
+            //20. Convex hull
+            //Point2D p = new Point2D(2, 1);
+            //Point a = new Point(1, 1);
+            //Point b = new Point(0, 4);
+            //Point c = new Point(2, 5);
+            //Console.WriteLine(Point2D.CCW(a, b, c));
+            List<Point2D> hull = new List<Point2D>();
+            hull.Add(new Point2D(0, 0));
+            hull.Add(new Point2D(0, 10));
+            hull.Add(new Point2D(-2, 8));
+            hull.Add(new Point2D(-1, 3));
+            hull.Add(new Point2D(-4, 9));
+            hull.Add(new Point2D(-6, 12));
+            hull.Add(new Point2D(-4, 4));
+            hull.Add(new Point2D(-5, 5));
+            hull.Add(new Point2D(-8, 6));
+            hull.Add(new Point2D(-9, 4));
+            hull.Add(new Point2D(-7, 3));
+            hull.Add(new Point2D(-4, 2));
+            hull.Add(new Point2D(-7, 1));
+            ConvexHull ch = new ConvexHull();
+            ch.FindHull(hull.ToArray());
+
             Console.Read();
         }
 

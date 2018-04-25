@@ -8,6 +8,11 @@ namespace Sorting
 {
     class Shuffling
     {
+        /// <summary>
+        /// Knuth shuffling algorithm
+        /// Shuffling in linear time
+        /// </summary>
+        /// <param name="items"></param>
         public static void Shuffle(int[] items)
         {
             int N = items.Length;

@@ -6,6 +6,21 @@ using System.Threading.Tasks;
 
 namespace Sorting
 {
+    /// <summary>
+    /// Divide an array into two halves
+    /// Recursively sort each half
+    /// Merge the two halves
+    /// 1. Mantain an auxiliary array
+    /// 2. Maintain three pointers for left half, right half and merged array.
+    /// 3. Compare item in i and j, place the samller one in k (say j is small)
+    /// 4. Increment j and k by 1.
+    /// Extra space is used as a new auxiliary array is used
+    /// Merge sort is optimal with respect to number of compaisons
+    /// Merge sort is not optimal w.r.t space usage
+    /// A stable sort perserves relative order of items with equal key
+    /// MERGE SORT and INSERTION SORT are stable
+    /// SELECTION and SHELL SORT are not
+    /// </summary>
     class MergeSort
     {
         public void Sort(int[] arr)
@@ -15,6 +30,11 @@ namespace Sorting
             Utilities.Print(arr);
         }
 
+        /// <summary>
+        /// Pass through array, merging subarrays of size 1.
+        /// Repeat for subarrays of size 2,4,8,16...........
+        /// </summary>
+        /// <param name="arr"></param>
         public void BottomUpMergeSort(int[] arr)
         {
             int N = arr.Length;
@@ -45,6 +65,14 @@ namespace Sorting
             Merge(arr, auxArray, low, mid, high);
         }
 
+        /// <summary>
+        /// Pre-condition: Low-to-Mid is sorted and Mid-to-high is sorted.
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="auxArray"></param>
+        /// <param name="low"></param>
+        /// <param name="mid"></param>
+        /// <param name="high"></param>
         private void Merge(int[] arr, int[] auxArray, int low, int mid, int high)
         {
             int N = arr.Length;

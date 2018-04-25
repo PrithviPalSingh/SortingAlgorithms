@@ -12,21 +12,27 @@ namespace Sorting
     /// </summary>
     class InsertionSort
     {
+        /// <summary>
+        ///  N^2/4  - Elements are traveres while sorting - average case
+        ///  Linear - If array is already sorted
+        ///  N^2/2  - If array elements are in reverse order
+        /// </summary>
+        /// <param name="items"></param>
         public void Sort(int[] items)
         {
             int N = items.Length;
             int loop = 0;
             int comparison = 0;
 
-            for (int i = 1; i < N; i++)
+            for (int i = 0; i < N; i++)
             {
                 for (int j = i; j > 0; j--)
                 {
                     loop++;
-                    if (Compare(items[j - 1], items[j]))
+                    if (Utilities.Less(items[j], items[j - 1]))
                     {
                         comparison++;
-                        Exchange(items, j - 1, j);
+                        Exchange(items, j, j - 1);
                     }
                     else
                     {

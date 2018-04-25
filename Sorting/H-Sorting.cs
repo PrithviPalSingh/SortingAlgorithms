@@ -8,6 +8,7 @@ namespace Sorting
 {
     /// <summary>
     /// Shell sorting
+    /// A g-Sorted array remains g-Sorted even after h-Sorting it.
     /// </summary>
     class H_Sorting
     {
@@ -31,10 +32,10 @@ namespace Sorting
                     for (int j = i; j >= h; j -= h)
                     {
                         loop++;
-                        if (Utilities.Greater(items[j - h], items[j]))
+                        if (Utilities.Less(items[j], items[j - h]))
                         {
                             comparison++;
-                            Utilities.Exchange(items, j - h, j);
+                            Utilities.Exchange(items, j, j - h);
                         }
                         else
                         {
@@ -50,6 +51,6 @@ namespace Sorting
             Console.WriteLine();
             Console.WriteLine("loop" + loop);
             Console.WriteLine("comparison" + comparison);
-        }       
+        }
     }
 }

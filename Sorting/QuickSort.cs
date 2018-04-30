@@ -8,6 +8,16 @@ namespace Sorting
 {
     class QuickSort
     {
+        /// <summary>
+        ///  1. Shuffle and array
+        ///  2. Partition such that, for some j
+        ///     2.1 Entry a[j] is in place
+        ///     2.2 No larger element to left of j
+        ///     2.3 No smaller item to right of j
+        ///  3. Sort each piece recursively
+        ///  4. 1 Parition element, 1 pointer that moves forward and 1 pointer that moves backward
+        /// </summary>
+        /// <param name="arr"></param>
         public void Sort(int[] arr)
         {
             Shuffling.Shuffle(arr);
@@ -15,6 +25,12 @@ namespace Sorting
             Utilities.Print(arr);
         }
 
+        /// <summary>
+        /// Compares ~ 2N
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
         public int Select(int[] arr, int k)
         {
             Shuffling.Shuffle(arr);
@@ -59,13 +75,13 @@ namespace Sorting
             int j = high + 1;
             while (true)
             {
-                while (Utilities.Greater(items[low], items[++i]))
+                while (Utilities.Less(items[++i], items[low]))
                 {
                     if (i == high)
                         break;
                 }
 
-                while (Utilities.Greater(items[--j], items[low]))
+                while (Utilities.Less(items[low], items[--j]))
                 {
                     if (j == low)
                         break;

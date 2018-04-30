@@ -77,9 +77,9 @@ namespace Sorting
 
             //10. Quick Sort
             //QuickSort qs = new QuickSort();
-            //int[] items6 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
+            //int[] items6 = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };// Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
             //qs.Sort(items6);
-            //Console.WriteLine(qs.Select(items6, 9));
+            //Console.WriteLine(qs.Select(items6, 3));
 
             ////11. Quick sort select
             //QuickSort qs = new QuickSort();
@@ -87,9 +87,9 @@ namespace Sorting
             //Console.WriteLine(qs.Select(items7, 1));
 
             //12. Dijkstra's 3-Way sort
-            //Dijkstra3WaySorting d3s = new Dijkstra3WaySorting();
-            //int[] items8 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
-            //d3s.Sort(items8);
+            Dijkstra3WaySorting d3s = new Dijkstra3WaySorting();
+            int[] items8 = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 }; ;// Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
+            d3s.Sort(items8);
 
             ////14. Big sorting
             //BigSorting bs = new BigSorting();
@@ -150,22 +150,22 @@ namespace Sorting
             //Point b = new Point(0, 4);
             //Point c = new Point(2, 5);
             //Console.WriteLine(Point2D.CCW(a, b, c));
-            List<Point2D> hull = new List<Point2D>();
-            hull.Add(new Point2D(0, 0));
-            hull.Add(new Point2D(0, 10));
-            hull.Add(new Point2D(-2, 8));
-            hull.Add(new Point2D(-1, 3));
-            hull.Add(new Point2D(-4, 9));
-            hull.Add(new Point2D(-6, 12));
-            hull.Add(new Point2D(-4, 4));
-            hull.Add(new Point2D(-5, 5));
-            hull.Add(new Point2D(-8, 6));
-            hull.Add(new Point2D(-9, 4));
-            hull.Add(new Point2D(-7, 3));
-            hull.Add(new Point2D(-4, 2));
-            hull.Add(new Point2D(-7, 1));
-            ConvexHull ch = new ConvexHull();
-            ch.FindHull(hull.ToArray());
+            //List<Point2D> hull = new List<Point2D>();
+            //hull.Add(new Point2D(0, 0));
+            //hull.Add(new Point2D(0, 10));
+            //hull.Add(new Point2D(-2, 8));
+            //hull.Add(new Point2D(-1, 3));
+            //hull.Add(new Point2D(-4, 9));
+            //hull.Add(new Point2D(-6, 12));
+            //hull.Add(new Point2D(-4, 4));
+            //hull.Add(new Point2D(-5, 5));
+            //hull.Add(new Point2D(-8, 6));
+            //hull.Add(new Point2D(-9, 4));
+            //hull.Add(new Point2D(-7, 3));
+            //hull.Add(new Point2D(-4, 2));
+            //hull.Add(new Point2D(-7, 1));
+            //ConvexHull ch = new ConvexHull();
+            //ch.FindHull(hull.ToArray());
 
             Console.Read();
         }

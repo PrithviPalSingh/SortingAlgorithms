@@ -23,7 +23,7 @@ namespace Sorting
             if (low >= high)
                 return;
 
-            int i = low + 1;
+            int i = low;
             int lt = low;
             int gt = high;
 

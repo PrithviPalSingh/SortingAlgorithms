@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Sorting
 {
     /// <summary>
+    /// SORT AND MERGE
     /// Divide an array into two halves
     /// Recursively sort each half
     /// Merge the two halves

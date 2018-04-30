@@ -11,6 +11,8 @@ namespace Sorting
         /// <summary>
         /// 1. Create binary heap
         /// 2. Rearrange by continuously shifting max value to end
+        /// 3. Construction takes <= 2N compares and exchanges
+        /// 4. Sorting takes <= 2NLg(N) compares and exchanges
         /// </summary>
         /// <param name="charArray"></param>
         public void Sort(int[] charArray)

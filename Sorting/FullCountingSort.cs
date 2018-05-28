@@ -13,57 +13,34 @@ namespace Sorting
     {
         public void Sort(int n, int[] arr1, string[] arr2)
         {
-            int[] count = new int[n];
+            int R = arr1.Distinct().Count();
+            int[] count = new int[R + 1];
             int[] finalArray = new int[n];
             string[] finalStringArray = new string[n];
 
-            for (int i = 0; i < n/2; i++)
+            for (int i = 0; i < n / 2; i++)
             {
                 arr2[i] = "-";
             }
 
             for (int i = 0; i < n; i++)
             {
-                ++count[arr1[i]];
+                ++count[arr1[i] + 1];
             }
 
-            for (int i = 1; i < n; i++)
+            for (int i = 0; i < R; i++)
             {
-                count[i] += count[i - 1];
+                count[i + 1] += count[i];
             }
 
             for (int i = 0; i < n; i++)
             {
-                finalArray[count[arr1[i]] - 1] = arr1[i];
-                finalStringArray[count[arr1[i]] - 1] = arr2[i];
-                --count[arr1[i]];
+                finalArray[count[arr1[i]]] = arr1[i];
+                finalStringArray[count[arr1[i]]] = arr2[i];
+                count[arr1[i]]++;
             }
-
-            int[] count1 = new int[n];
-            int[] finalArray1 = new int[n];
-            string[] finalStringArray1 = new string[n];
-
-            for (int i = 0; i < n; i++)
-            {
-                ++count1[finalArray[i]];
-            }
-
-            for (int i = 1; i < n; i++)
-            {
-                count1[i] += count1[i - 1];
-            }
-
-            for (int i = 0; i < n; i++)
-            {
-                finalArray1[count1[finalArray[i]] - 1] = finalArray[i];
-                finalStringArray1[count1[finalArray[i]] - 1] = finalStringArray[i];
-                --count1[finalArray[i]];
-            }
-
-            //Console.WriteLine(string.Join(" ", finalArray));
-            //Console.WriteLine(string.Join(" ", finalStringArray));
-            //Console.WriteLine(string.Join(" ", finalArray1));
-            Console.WriteLine(string.Join(" ", finalStringArray1));
+            
+            Console.WriteLine(string.Join(" ", finalStringArray));
         }
 
         private void Sort(int[] arr, int[] auxArray, int[] arrInt, int[] arr2Aux, int low, int high)

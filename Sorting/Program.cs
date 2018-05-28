@@ -87,9 +87,9 @@ namespace Sorting
             //Console.WriteLine(qs.Select(items7, 1));
 
             //12. Dijkstra's 3-Way sort
-            Dijkstra3WaySorting d3s = new Dijkstra3WaySorting();
-            int[] items8 = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 }; ;// Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
-            d3s.Sort(items8);
+            //Dijkstra3WaySorting d3s = new Dijkstra3WaySorting();
+            //int[] items8 = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 }; ;// Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
+            //d3s.Sort(items8);
 
             ////14. Big sorting
             //BigSorting bs = new BigSorting();
@@ -166,6 +166,21 @@ namespace Sorting
             //hull.Add(new Point2D(-7, 1));
             //ConvexHull ch = new ConvexHull();
             //ch.FindHull(hull.ToArray());
+
+            //21. LSD radix sort
+            string[] arr = { "dab", "add", "cab", "fad", "fee", "bad", "dad", "bee", "fed", "bed", "ebb", "ace" };
+            var result = new LSDRadixSort().Sort(arr, 3);
+            Console.WriteLine(string.Join(":", result));
+
+            //13. MSD radix sort
+            string[] arr1 = { "dab", "add", "cab", "fad", "fee", "bad", "dad", "bee", "fed", "bed", "ebb", "ace" };
+            new MSDRadixSort().Sort(arr1);
+            Console.WriteLine(string.Join(":", arr1));
+
+            //13. 3 way radix+quick sort
+            string[] arr2 = { "dab", "add", "cab", "fad", "fee", "bad", "dad", "bee", "fed", "bed", "ebb", "ace" };
+            new _3WayRadixQuickSort().Sort(arr2);
+            Console.WriteLine(string.Join(":", arr2));
 
             Console.Read();
         }

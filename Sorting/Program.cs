@@ -167,20 +167,23 @@ namespace Sorting
             //ConvexHull ch = new ConvexHull();
             //ch.FindHull(hull.ToArray());
 
-            //21. LSD radix sort
-            string[] arr = { "dab", "add", "cab", "fad", "fee", "bad", "dad", "bee", "fed", "bed", "ebb", "ace" };
-            var result = new LSDRadixSort().Sort(arr, 3);
-            Console.WriteLine(string.Join(":", result));
+            ////21. LSD radix sort
+            //string[] arr = { "dab", "add", "cab", "fad", "fee", "bad", "dad", "bee", "fed", "bed", "ebb", "ace" };
+            //var result = new LSDRadixSort().Sort(arr, 3);
+            //Console.WriteLine(string.Join(":", result));
 
-            //13. MSD radix sort
-            string[] arr1 = { "dab", "add", "cab", "fad", "fee", "bad", "dad", "bee", "fed", "bed", "ebb", "ace" };
-            new MSDRadixSort().Sort(arr1);
-            Console.WriteLine(string.Join(":", arr1));
+            ////13. MSD radix sort
+            //string[] arr1 = { "dab", "add", "cab", "fad", "fee", "bad", "dad", "bee", "fed", "bed", "ebb", "ace" };
+            //new MSDRadixSort().Sort(arr1);
+            //Console.WriteLine(string.Join(":", arr1));
 
-            //13. 3 way radix+quick sort
-            string[] arr2 = { "dab", "add", "cab", "fad", "fee", "bad", "dad", "bee", "fed", "bed", "ebb", "ace" };
-            new _3WayRadixQuickSort().Sort(arr2);
-            Console.WriteLine(string.Join(":", arr2));
+            ////13. 3 way radix+quick sort
+            //string[] arr2 = { "dab", "add", "cab", "fad", "fee", "bad", "dad", "bee", "fed", "bed", "ebb", "ace" };
+            //new _3WayRadixQuickSort().Sort(arr2);
+            //Console.WriteLine(string.Join(":", arr2));
+
+            LenaSort ls = new LenaSort();
+            ls.ConstructArray(3,2);
 
             Console.Read();
         }

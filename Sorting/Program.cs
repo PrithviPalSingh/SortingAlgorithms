@@ -51,9 +51,9 @@ namespace Sorting
             //ss.Sort(items1);
 
             ////6. H-Sorting
-            //H_Sorting hs = new H_Sorting();
-            //int[] items2 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
-            //hs.Sort(items2);
+            H_Sorting hs = new H_Sorting();
+            int[] items2 = Array.ConvertAll(Console.ReadLine().Split(' '), arrtemp => Convert.ToInt32(arrtemp));
+            hs.Sort(items2);
 
             //7. Shuffle
             //Shuffling sf = new Shuffling();
@@ -182,8 +182,8 @@ namespace Sorting
             //new _3WayRadixQuickSort().Sort(arr2);
             //Console.WriteLine(string.Join(":", arr2));
 
-            LenaSort ls = new LenaSort();
-            ls.ConstructArray(3,2);
+            //LenaSort ls = new LenaSort();
+            //ls.ConstructArray(1, 100000, 675013257);
 
             Console.Read();
         }

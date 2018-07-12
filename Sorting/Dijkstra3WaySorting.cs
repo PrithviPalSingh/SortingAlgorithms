@@ -8,6 +8,10 @@ namespace Sorting
 {
     /// <summary>
     /// Efficient for duplicate keys
+    /// Partition array into 3 parts:
+    ///  1. Entries between LT and GT equal to partitioning element V
+    ///  2. No Larger element to left of LT
+    ///  3. No gretaer element to right of GT
     /// </summary>
     class Dijkstra3WaySorting
     {

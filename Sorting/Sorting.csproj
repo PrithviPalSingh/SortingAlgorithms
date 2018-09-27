@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="3WayRadixQuickSort.cs" />
     <Compile Include="BigSorting.cs" />
+    <Compile Include="BubbleSort.cs" />
+    <Compile Include="Comparator.cs" />
     <Compile Include="ConvexHull.cs" />
     <Compile Include="CountingSort.cs" />
     <Compile Include="Dijkstra3WaySorting.cs" />
@@ -56,6 +58,7 @@
     <Compile Include="LenaSort.cs" />
     <Compile Include="LongestRepeatedSubstring.cs" />
     <Compile Include="LSDRadixSort.cs" />
+    <Compile Include="MarkAndToys.cs" />
     <Compile Include="MergeSort.cs" />
     <Compile Include="MSDRadixSort.cs" />
     <Compile Include="Point2D.cs" />
